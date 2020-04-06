@@ -13,6 +13,8 @@
 		3BDAD564243B2A9A00705599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDAD563243B2A9A00705599 /* Assets.xcassets */; };
 		3BDAD567243B2A9A00705599 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDAD565243B2A9A00705599 /* LaunchScreen.storyboard */; };
 		3BDAD570243B2AFE00705599 /* EmojiArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDAD56F243B2AFE00705599 /* EmojiArtViewController.swift */; };
+		3BDAD572243B2C3F00705599 /* EmojiArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDAD571243B2C3F00705599 /* EmojiArtView.swift */; };
+		3BDAD574243B30AA00705599 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDAD573243B30AA00705599 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3BDAD566243B2A9A00705599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BDAD568243B2A9A00705599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BDAD56F243B2AFE00705599 /* EmojiArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtViewController.swift; sourceTree = "<group>"; };
+		3BDAD571243B2C3F00705599 /* EmojiArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtView.swift; sourceTree = "<group>"; };
+		3BDAD573243B30AA00705599 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				3BDAD56E243B2AAD00705599 /* Supporting files */,
 				3BDAD560243B2A9800705599 /* Main.storyboard */,
+				3BDAD571243B2C3F00705599 /* EmojiArtView.swift */,
 				3BDAD56F243B2AFE00705599 /* EmojiArtViewController.swift */,
+				3BDAD573243B30AA00705599 /* Utilities.swift */,
 				3BDAD568243B2A9A00705599 /* Info.plist */,
 			);
 			path = EmojiArt;
@@ -149,6 +155,8 @@
 				3BDAD55B243B2A9800705599 /* AppDelegate.swift in Sources */,
 				3BDAD570243B2AFE00705599 /* EmojiArtViewController.swift in Sources */,
 				3BDAD55D243B2A9800705599 /* SceneDelegate.swift in Sources */,
+				3BDAD574243B30AA00705599 /* Utilities.swift in Sources */,
+				3BDAD572243B2C3F00705599 /* EmojiArtView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
