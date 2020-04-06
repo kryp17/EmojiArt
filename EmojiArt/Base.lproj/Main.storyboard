@@ -53,7 +53,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="WS3-Xe-jdw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oFp-xH-lXr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oFp-xH-lXr">
+                            <connections>
+                                <action selector="addEmojiArt:" destination="lF4-Ga-x9G" id="Kke-2J-Lyh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRS-UF-smV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

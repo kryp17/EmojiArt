@@ -33,6 +33,10 @@ class EmojiArtDocumentTableViewController: UITableViewController {
     }
     
     
+    @IBAction func addEmojiArt(_ sender: UIBarButtonItem) {
+        EmojiArtDocuments += ["Untitled".madeUnique(withRespectTo: EmojiArtDocuments)]
+        tableView.reloadData()
+    }
     
 
     /*
