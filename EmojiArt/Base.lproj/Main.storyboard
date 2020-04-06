@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LxF-oi-Y8c">
+                                <rect key="frame" x="673" y="492" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY0-Gk-3Zd">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1004"/>
                                 <subviews>
@@ -34,7 +37,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LxF-oi-Y8c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IkV-59-h5d"/>
                             <constraint firstItem="DY0-Gk-3Zd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QEt-L5-keA"/>
+                            <constraint firstItem="LxF-oi-Y8c" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="QVH-Y6-aQu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DY0-Gk-3Zd" secondAttribute="trailing" id="dnc-Qa-3rX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DY0-Gk-3Zd" secondAttribute="bottom" id="l7H-T9-OSP"/>
                             <constraint firstItem="DY0-Gk-3Zd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o71-GD-rvX"/>
@@ -42,6 +47,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Spinner" destination="LxF-oi-Y8c" id="Moc-xG-LNn"/>
                         <outlet property="dropZone" destination="DY0-Gk-3Zd" id="xAN-Q8-w6T"/>
                         <outlet property="emojiArtView" destination="pey-ko-8Lo" id="Gg4-PU-HVm"/>
                     </connections>

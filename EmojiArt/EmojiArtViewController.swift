@@ -29,6 +29,7 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
     
     
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        Spinner.startAnimating()
             imageFetcher = ImageFetcher() { (url, image) in
             DispatchQueue.main.async{
                 self.emojiArtView.backGroundImage = image
@@ -45,9 +46,11 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
             self.imageFetcher.backup = image
             }
         }
+            Spinner.stopAnimating()
     }
     
     @IBOutlet weak var emojiArtView: EmojiArtView!
 
+    @IBOutlet weak var Spinner: UIActivityIndicatorView!
     
 }
