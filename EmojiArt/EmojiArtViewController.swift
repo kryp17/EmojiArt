@@ -25,19 +25,20 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
         return UIDropProposal(operation: .copy)
     }
     
-    var imageFetcher = imageFetcher!
+    var imageFetcher: ImageFetcher!
     
     
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
-        imageFetcher = imageFetcher(){ (url, image) in
-            
-            
+        imageFetcher = ImageFetcher() { (url, image) in
+            DispatchQueue.main.async{
+                self.emojiArtView.backGroundImage = image
+            }
         }
         session.loadObjects(ofClass: NSURL.self){ nsurls in
-            
+            self.imageFetcher.fetch(url)
         }
         session.loadObjects(ofClass: UIImage.self){ images in
-            
+            self.imageFetcher.backup = image
         }
     }
     
