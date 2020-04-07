@@ -99,7 +99,7 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate, UIScro
         return session.canLoadObjects(ofClass: NSAttributedString.self)
     }
     
-    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDragSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal{
+    private func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDragSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal{
         let isSelf = (session.localContext as? UICollectionView) == collectionView
         return UICollectionViewDropProposal(operation: isSelf ? .move : .copy, intent: .insertAtDestinationIndexPath)
 
@@ -120,9 +120,22 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate, UIScro
                     })
                     coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
                 }
+            } else {
+                let placeholderContext = coordinator.drop(item.dragItem, to: UICollectionViewDropPlaceholder(insertionIndexPath: destinationIndexPath, reuseIdentifier: "DropPlaceHolderCell"))
+                item.dragItem.itemProvider.loadObject(ofClass: NSAttributedString.self) { (provider, error) in
+                    DispatchQueue.main.async {
+                        if let attributedString = provider as? NSAttributedString {
+                        placeholderContext.commitInsertion(dataSourceUpdates: {insertionIndexPath in
+                            self.emojis.insert(attributedString.string, at: insertionIndexPath.item)
+                        })
+                        } else {
+                            placeholderContext.deletePlaceholder()
+                        }
+                }
             }
         }
       }
+    }
 
     var emojis = "🪕🇪🇸🍠🍳🐌🐛".map { String($0)}
     
