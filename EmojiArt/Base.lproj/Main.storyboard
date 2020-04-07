@@ -139,6 +139,50 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                             </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddEmojiButtonCell" id="tK6-aF-bEu">
+                                                <rect key="frame" x="180" y="0.0" width="80" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Fq-ey-qQL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-jX-6Xd">
+                                                            <rect key="frame" x="25" y="19" width="30" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="addEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaD-Jk-7E2"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hpB-jX-6Xd" firstAttribute="centerX" secondItem="0Fq-ey-qQL" secondAttribute="centerX" id="W8q-Qx-ByC"/>
+                                                        <constraint firstItem="hpB-jX-6Xd" firstAttribute="centerY" secondItem="0Fq-ey-qQL" secondAttribute="centerY" id="gCm-hk-UxY"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EmojiInputCell" id="jic-Dg-4gh" customClass="TextFieldCollectionViewCell" customModule="EmojiArt" customModuleProvider="target">
+                                                <rect key="frame" x="270" y="0.0" width="80" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dyk-Rh-MaW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8g-40-otu">
+                                                            <rect key="frame" x="24" y="23" width="32" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="J8g-40-otu" firstAttribute="centerY" secondItem="dyk-Rh-MaW" secondAttribute="centerY" id="ckW-8o-zQ6"/>
+                                                        <constraint firstItem="J8g-40-otu" firstAttribute="centerX" secondItem="dyk-Rh-MaW" secondAttribute="centerX" id="zkV-WQ-bTh"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="textField" destination="J8g-40-otu" id="r2N-1F-HEB"/>
+                                                </connections>
+                                            </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                 </subviews>
