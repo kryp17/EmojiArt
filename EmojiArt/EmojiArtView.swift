@@ -16,5 +16,9 @@ class EmojiArtView: UIView {
         backGroundImage?.draw(in: bounds)
     }
     
+    
+    
+    
+    
 
 }

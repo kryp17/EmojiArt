@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
+class EmojiArtViewController: UIViewController,UIDropInteractionDelegate, UIScrollViewDelegate {
 
 
     @IBOutlet weak var dropZone: UIView!{
@@ -17,6 +17,38 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
         }
     }
 
+    @IBOutlet weak var scrollView: UIScrollView!{
+        didSet{
+            scrollView.minimumZoomScale = 0.1
+            scrollView.maximumZoomScale = 5.0
+            scrollView.delegate = self
+            scrollView.addSubview(emojiArtView)
+        }
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return emojiArtView
+    }
+    
+    var emojiBackgroundImage: UIImage?{
+        get{
+            return emojiArtView.backGroundImage
+        }
+        set{
+            scrollView?.zoomScale = 1.0
+            emojiArtView.backGroundImage = newValue
+            let size = newValue?.size ?? CGSize.zero
+            emojiArtView.frame = CGRect(origin: CGPoint.zero, size: size)
+            scrollView?.contentSize = size
+            if let dropZone = self.dropZone, size.width > 0, size.height>0{
+                scrollView?.zoomScale = max(dropZone.bounds.size.width/size.width , dropZone.bounds.size.height/size.height)
+            }
+        }
+    }
+    
+    var emojiArtView = EmojiArtView()
+    
+    
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSURL.self) && session.canLoadObjects(ofClass: UIImage.self)
     }
@@ -32,7 +64,7 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
         Spinner.startAnimating()
             imageFetcher = ImageFetcher() { (url, image) in
             DispatchQueue.main.async{
-                self.emojiArtView.backGroundImage = image
+                self.emojiBackgroundImage = image
             }
         }
         
@@ -49,8 +81,9 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate {
             Spinner.stopAnimating()
     }
     
-    @IBOutlet weak var emojiArtView: EmojiArtView!
-
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
+    
+    
+
     
 }

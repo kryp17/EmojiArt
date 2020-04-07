@@ -69,7 +69,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="EmojiArtViewController" customModule="EmojiArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="991" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LxF-oi-Y8c">
@@ -78,17 +78,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY0-Gk-3Zd">
                                 <rect key="frame" x="0.0" y="0.0" width="990.5" height="1004"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pey-ko-8Lo" customClass="EmojiArtView" customModule="EmojiArt" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0H-yK-FYz">
                                         <rect key="frame" x="0.0" y="0.0" width="990.5" height="1004"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="pey-ko-8Lo" firstAttribute="top" secondItem="DY0-Gk-3Zd" secondAttribute="top" id="360-ft-Fxk"/>
-                                    <constraint firstItem="pey-ko-8Lo" firstAttribute="leading" secondItem="DY0-Gk-3Zd" secondAttribute="leading" id="4bv-N4-YVO"/>
-                                    <constraint firstAttribute="bottom" secondItem="pey-ko-8Lo" secondAttribute="bottom" id="96P-v6-Xin"/>
-                                    <constraint firstAttribute="trailing" secondItem="pey-ko-8Lo" secondAttribute="trailing" id="Ffm-oJ-Hc9"/>
+                                    <constraint firstItem="r0H-yK-FYz" firstAttribute="leading" secondItem="DY0-Gk-3Zd" secondAttribute="leading" id="Cy9-aw-tGD"/>
+                                    <constraint firstAttribute="bottom" secondItem="r0H-yK-FYz" secondAttribute="bottom" id="Lji-RI-gMK"/>
+                                    <constraint firstItem="r0H-yK-FYz" firstAttribute="top" secondItem="DY0-Gk-3Zd" secondAttribute="top" id="q0l-fu-g8O"/>
+                                    <constraint firstAttribute="trailing" secondItem="r0H-yK-FYz" secondAttribute="trailing" id="sqR-lS-Gu7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -106,7 +105,7 @@
                     <connections>
                         <outlet property="Spinner" destination="LxF-oi-Y8c" id="Moc-xG-LNn"/>
                         <outlet property="dropZone" destination="DY0-Gk-3Zd" id="xAN-Q8-w6T"/>
-                        <outlet property="emojiArtView" destination="pey-ko-8Lo" id="Gg4-PU-HVm"/>
+                        <outlet property="scrollView" destination="r0H-yK-FYz" id="sKj-Jv-Yha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
