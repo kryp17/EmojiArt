@@ -153,15 +153,13 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate, UIScro
     func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSAttributedString.self)
     }
-    
-    
+            
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal{
         if let indexPath = destinationIndexPath, indexPath.section == 1{
-        let isSelf = (session.localDragSession?.localContext as? UICollectionView) == collectionView
-        return UICollectionViewDropProposal(operation: isSelf ? .move : .copy, intent: .insertAtDestinationIndexPath)
+            let isSelf = (session.localDragSession?.localContext as? UICollectionView) == collectionView
+            return UICollectionViewDropProposal(operation: isSelf ? .move : .copy, intent: .insertAtDestinationIndexPath)
         } else {
             return UICollectionViewDropProposal(operation: .cancel)
-            
         }
     }
     
@@ -197,7 +195,7 @@ class EmojiArtViewController: UIViewController,UIDropInteractionDelegate, UIScro
       }
     }
 
-    var emojis = "🪕🇪🇸🍠🍳🐌🐛".map { String($0)}
+    var emojis = "🪕🇪🇸🍠🍳🐌🦐🐌🦁🍳🧅🍆🐛".map { String($0)}
     
     private var font: UIFont{
         return UIFontMetrics(forTextStyle: .body).scaledFont(for: UIFont.preferredFont(forTextStyle: .body).withSize(30.0))
